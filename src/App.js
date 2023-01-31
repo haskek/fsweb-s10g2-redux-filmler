@@ -10,6 +10,8 @@ import MovieHeader from './components/MovieHeader';
 import AddMovieForm from './components/AddMovieForm';
 import FavoriteMovieList from './components/FavoriteMovieList';
 
+
+
 const App = props => {
   const displayFavorites = true;
 
@@ -20,10 +22,11 @@ const App = props => {
       </nav>
 
       <div className="max-w-4xl mx-auto px-3 pb-4">
+      
         <MovieHeader />
         <div className="flex flex-col sm:flex-row gap-4">
           {displayFavorites && <FavoriteMovieList />}
-
+         
           <Switch>
             <Route exact path="/movies/add">
               <AddMovieForm />
@@ -41,10 +44,13 @@ const App = props => {
               <Redirect to="/movies" />
             </Route>
           </Switch>
+         
         </div>
       </div>
     </div>
+    
   );
 };
 
 export default App;
+
